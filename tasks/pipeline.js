@@ -32,6 +32,10 @@ var jsFilesToInject = [
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
+  'js/app/home/homeApp.js',
+  'js/app/home/**/*.js',
+  'js/app/dashboard/dashboardApp.js',
+  'js/app/dashboard/**/*.js',
   'js/**/*.js'
 ];
 

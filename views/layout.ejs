@@ -33,7 +33,10 @@
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body ng-app="homeApp" ng-controller="AppCtrl" ng-cloak>
+    <md-toolbar>
+        <h1>Welcome to IC Rewards Application</h1>
+    </md-toolbar>
     <%- body %>
 
 
@@ -93,6 +96,10 @@
     <script src="/js/dependencies/angular-animate.js"></script>
     <script src="/js/dependencies/angular-aria.js"></script>
     <script src="/js/dependencies/angular-material.js"></script>
+    <script src="/js/app/home/homeApp.js"></script>
+    <script src="/js/app/home/controllers/AppCtrl.js"></script>
+    <script src="/js/app/dashboard/dashboardApp.js"></script>
+    <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
