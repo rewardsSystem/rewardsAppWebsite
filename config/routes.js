@@ -32,16 +32,24 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+
+// Passport routes
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
+
+  'post /auth/local': 'AuthController.callback',
+  'post /auth/local/:action': 'AuthController.callback',
+
+  'get /auth/:provider': 'AuthController.provider',
+  'get /auth/:provider/callback': 'AuthController.callback',
+
   '/': {
     view: 'home/index'
   },
 
-  '/dashboard': {
-    view: 'dashboard/index',
-    locals:{
-      layout:'dashboardLayout'
-    }
-  }
+  'get /dashboard': 'DashboardController.index',
+
 
   /***************************************************************************
   *                                                                          *
