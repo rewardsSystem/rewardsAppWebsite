@@ -2,6 +2,6 @@
 
     'use strict';
 
-    ng.module('homeApp', ['ngMaterial']);
+    ng.module('homeApp', ['ngMaterial','ngMdIcons']);
 
 })(angular)

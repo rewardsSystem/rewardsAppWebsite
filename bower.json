@@ -17,5 +17,8 @@
   "dependencies": {
     "angular-material": "~0.9.6",
     "material-design-icons": "~2.0.0"
+  },
+  "resolutions": {
+    "angular": "1.4.0"
   }
 }
