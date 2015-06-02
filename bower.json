@@ -1,0 +1,21 @@
+{
+  "name": "rewardsSailsApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rewardsSystem/rewardsAppWebsite",
+  "authors": [
+    "Ovidio R. Calvet <ovidio@calvetsolutions.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.9.6",
+    "material-design-icons": "~2.0.0"
+  }
+}
