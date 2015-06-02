@@ -17,9 +17,10 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
+  models: {
+    connection: 'prodMongoDb',
+    migrate: false
+  },
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
@@ -34,5 +35,16 @@ module.exports = {
   // log: {
   //   level: "silent"
   // }
+
+  connections: {
+    prodMongoDb: {
+      adapter: 'sails-mongo',
+      host: 'rewardsDb.cts.com',
+      port: 27017,
+      // user: 'rewardsApp',
+      // password: 'rewardsApp.local',
+      database: 'rewardsApp'
+    }
+  }
 
 };

@@ -13,9 +13,15 @@ module.exports = {
         role: {
             type:'string',
             enum: ['parent', 'child']
+        },
+        parent: {
+            model: 'user'
+        },
+        children: {
+            collection: 'user'
+        },
+        tasks: {
+            collection: 'task'
         }
-        // children: {
-        //     collection: 'User'
-        // }
     }
 }
