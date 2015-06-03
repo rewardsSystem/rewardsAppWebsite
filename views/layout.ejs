@@ -26,16 +26,29 @@
             + Import stylesheets from other directories
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/dependencies/angular-material.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="text/javascript" src=""></script>
   </head>
 
   <body ng-app="homeApp" ng-controller="AppCtrl" ng-cloak>
     <md-toolbar>
-        <h1>Welcome to IC Rewards Application</h1>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Welcome to IC Rewards Application</span>
+        </h2>
+        <span flex></span>
+        <a href="/login" class="md-button md-raised" aria-label="Login">
+            Sign In
+        </a>
+        <a href="/register" class="md-button md-raised" aria-label="Login">
+            Register
+        </a>
+      </div>
     </md-toolbar>
     <%- body %>
 
@@ -101,6 +114,5 @@
     <script src="/js/app/dashboard/dashboardApp.js"></script>
     <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
     <!--SCRIPTS END-->
-    <script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
   </body>
 </html>
