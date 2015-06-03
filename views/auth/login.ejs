@@ -1,4 +1,4 @@
-<md-content layout-padding>
+<md-content layout-padding layout="row" layout-align="center">
   <% if (errors) {%>
     <% errors.forEach(function (error) { %>
       <%= __(error) %>
@@ -6,14 +6,14 @@
   <% } %>
  
   <form role="form" action="/auth/local" method="post">
-    <div layout layout-sm="column">
+    <div layout="column">
       <md-input-container>
         <label>Username or Email</label>
-        <input name="identifier">
+        <input name="identifier" md-no-float>
       </md-input-container>
       <md-input-container>
         <label>Password</label>
-        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password" md-no-float>
       </md-input-container>
     </div>
     <div layout="row">

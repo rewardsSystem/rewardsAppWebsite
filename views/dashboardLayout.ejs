@@ -6,15 +6,23 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/dependencies/angular-material.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 </head>
 <body ng-app="dashboardApp" ng-controller="AppCtrl" ng-cloak>
     <md-toolbar>
-        <h1>Dashboard</h1>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Dashboard</span>
+        </h2>
+        <a href="/logout" class="md-button md-raised">
+            Log out
+        </a>
+      </div>
     </md-toolbar>
     <%- body %>
 
@@ -29,6 +37,5 @@
     <script src="/js/app/dashboard/dashboardApp.js"></script>
     <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
     <!--SCRIPTS END-->
-<script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script> 
 </body>
 </html>

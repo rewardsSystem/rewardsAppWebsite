@@ -2,6 +2,6 @@
 
     'use strict';
 
-    ng.module('dashboardApp', ['ngMaterial', 'ngMdIcons']);
+    ng.module('dashboardApp', ['ngMaterial']);
 
 })(angular)
