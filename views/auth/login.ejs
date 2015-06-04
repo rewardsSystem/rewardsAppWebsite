@@ -1,12 +1,12 @@
-<md-content layout-padding layout="row" layout-align="center">
+<md-content layout-padding layout="column" layout-align="center center" layout-fill>
   <% if (errors) {%>
     <% errors.forEach(function (error) { %>
       <%= __(error) %>
     <% }) %>
   <% } %>
  
-  <form role="form" action="/auth/local" method="post">
-    <div layout="column">
+  <form role="form" action="/auth/local" method="post" flex="50">
+    <div layout="column" >
       <md-input-container>
         <label>Username or Email</label>
         <input name="identifier" md-no-float>
