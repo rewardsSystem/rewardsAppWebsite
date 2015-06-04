@@ -14,18 +14,40 @@
     
 </head>
 <body ng-app="dashboardApp" ng-controller="AppCtrl" ng-cloak>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h2>
-          <a href="/dashboard">Dashboard</a>
-        </h2>
-        <span flex></span>
-        <a href="/logout" class="md-button md-raised">
-            Log out
-        </a>
-      </div>
-    </md-toolbar>
-    <%- body %>
+    <section layout="row" flex layout-fill>
+        <md-sidenav layout="column" class="md-primary md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <span>Main Menu</span>
+                </div>
+            </md-toolbar>
+            <md-list class="md-primary" flex>
+                <md-list-item>
+                    <md-button ng-click="close()" class="md-raised">
+                      Close Sidenav Left
+                    </md-button>
+                </md-list-item>
+            </md-list>
+            </md-content>
+        </md-sidenav>
+        <div layout="column" flex>
+         <md-toolbar >
+          <div class="md-toolbar-tools">
+            <h2>
+              <a href="/dashboard">Dashboard</a>
+            </h2>
+            <span flex></span>
+            <a href="/logout" class="md-button md-raised">
+                Log out
+            </a>
+          </div>
+        </md-toolbar>
+        <div flex>
+        <%- body %>
+        </div>
+        </div>
+    </section>
+   
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
@@ -37,6 +59,7 @@
     <script src="/js/app/home/controllers/AppCtrl.js"></script>
     <script src="/js/app/dashboard/dashboardApp.js"></script>
     <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
+    <script src="/js/app/dashboard/services/cardService.js"></script>
     <!--SCRIPTS END-->
 </body>
 </html>

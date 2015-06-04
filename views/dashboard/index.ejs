@@ -1,7 +1,36 @@
 <md-content>
-    <md-card>
+    <md-card ng-repeat="card in cards">
+        <md-toolbar class="md-accent md-hue-1">
+             <div class="md-toolbar-tools" layout="row" layout-align="center">
+                <span>{{ card.title }}</span>
+            </div>
+        </md-toolbar>
         <md-card-content>
-            <h2>{{ test }} DASHBOARD</h2> 
+            <h2>{{ card.content }}</h2> 
         </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+            <md-button class="md-fab" aria-label="Add">
+                <md-icon md-font-icon="icon-home" style="color: black, 'font-size': 12px', height: 12 + 'px'"></md-icon>
+            </md-button>
+        </div>    
     </md-card>
 </md-content>
+<style>
+    @font-face {
+      font-family:"icomoon";
+      src:url("https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot");
+      font-weight:normal;
+      font-style:normal;
+    }
+
+    @font-face {
+      font-family: 'icomoon';
+      src:url('https://rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?-cmq1um');
+      src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?#iefix-cmq1um') format('embedded-opentype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.woff?-cmq1um') format('woff'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.ttf?-cmq1um') format('truetype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.svg?-cmq1um#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
