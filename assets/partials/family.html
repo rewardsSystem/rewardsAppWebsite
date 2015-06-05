@@ -1,5 +1,5 @@
-<md-content layout="row" layout-wrap>
-    <md-card layout-padding flex-gt-md="33" ng-repeat="familyMember in familyMembers" layout="column" ng-click="memberClick(familyMember)">
+<md-content layout="row" layout-sm="column" layout-wrap>
+    <md-card layout-padding ng-repeat="familyMember in familyMembers" layout="column" ng-click="memberClick(familyMember)">
         <img ng-src="{{ familyMember.picture }}" alt="{{ familyMember.name }}" />
         <md-card-content>
             <h3>{{ familyMember.name }}</h3>
