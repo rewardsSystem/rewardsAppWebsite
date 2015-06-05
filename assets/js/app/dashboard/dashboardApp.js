@@ -2,8 +2,8 @@
 
     'use strict';
 
-    ng.module('dashboardApp', ['ngMaterial'])
-        .config(function($mdThemingProvider) {
+    ng.module('dashboardApp', ['ngMaterial', 'ui.router'])
+        .config(function($mdThemingProvider, $urlRouterProvider, $stateProvider) {
           $mdThemingProvider.theme('default')
             .primaryPalette('blue', {
                 'default': '800',
@@ -23,6 +23,32 @@
                 'hue-2': '500',
                 'hue-3': '900'
             });
+
+            $urlRouterProvider.otherwise("/family");
+              //
+              // Now set up the states
+            $stateProvider
+                .state('family', {
+                  url: "/family",
+                  controller: "FamilyViewCtrl",
+                  templateUrl: "partials/family.html"
+                })
+                .state('member', {
+                  url: "/family/member",
+                  controller: "MemberViewCtrl",
+                  params: { member: null },
+                  templateUrl: "partials/member.html"
+                })
+                .state('settings', {
+                  url: "/settings",
+                  controller: "SettingsViewCtrl",
+                  templateUrl: "partials/settings.html"
+                })
+                .state('about', {
+                  url: "/about",
+                  controller: "AboutViewCtrl",
+                  templateUrl: "partials/about.html"
+                });
         });
 
 })(angular)

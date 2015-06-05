@@ -14,37 +14,36 @@
     
 </head>
 <body ng-app="dashboardApp" ng-controller="AppCtrl" ng-cloak>
-    <section layout="row" flex layout-fill>
-        <md-sidenav layout="column" class="md-primary md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-            <md-toolbar>
+    <section layout="row" layout-fill>
+        <md-sidenav layout="column" class="md-primary md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-primary">
                 <div class="md-toolbar-tools">
                     <span>Main Menu</span>
                 </div>
             </md-toolbar>
-            <md-list class="md-primary" flex>
-                <md-list-item>
-                    <md-button ng-click="close()" class="md-raised">
-                      Close Sidenav Left
-                    </md-button>
+            <md-list flex ng-controller="SideMenuCtrl">
+                <md-list-item ng-repeat="menuItem in menuItems" ng-click="menuClicked(menuItem.action)">
+                    <p>{{ menuItem.title }}</p>
+                    <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
                 </md-list-item>
             </md-list>
             </md-content>
         </md-sidenav>
         <div layout="column" flex>
-         <md-toolbar >
-          <div class="md-toolbar-tools">
-            <h2>
-              <a href="/dashboard">Dashboard</a>
-            </h2>
-            <span flex></span>
-            <a href="/logout" class="md-button md-raised">
-                Log out
-            </a>
-          </div>
-        </md-toolbar>
-        <div flex>
-        <%- body %>
-        </div>
+            <md-toolbar >
+              <div class="md-toolbar-tools">
+                <h2>
+                  <a href="/dashboard">{{ pageProperties.pageTitle }}</a>
+                </h2>
+                <span flex></span>
+                <a href="/logout" class="md-button md-raised">
+                    Log out
+                </a>
+              </div>
+            </md-toolbar>
+            <div flex>
+                <%- body %>
+            </div>
         </div>
     </section>
    
@@ -55,11 +54,17 @@
     <script src="/js/dependencies/angular-animate.js"></script>
     <script src="/js/dependencies/angular-aria.js"></script>
     <script src="/js/dependencies/angular-material.js"></script>
+    <script src="/js/dependencies/angular-ui-router.js"></script>
     <script src="/js/app/home/homeApp.js"></script>
     <script src="/js/app/home/controllers/AppCtrl.js"></script>
     <script src="/js/app/dashboard/dashboardApp.js"></script>
+    <script src="/js/app/dashboard/controllers/AboutViewCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
-    <script src="/js/app/dashboard/services/cardService.js"></script>
+    <script src="/js/app/dashboard/controllers/FamilyViewCtrl.js"></script>
+    <script src="/js/app/dashboard/controllers/MemberViewCtrl.js"></script>
+    <script src="/js/app/dashboard/controllers/SettingsViewCtrl.js"></script>
+    <script src="/js/app/dashboard/controllers/SideMenuCtrl.js"></script>
+    <script src="/js/app/dashboard/services/pagePropertiesService.js"></script>
     <!--SCRIPTS END-->
 </body>
 </html>
