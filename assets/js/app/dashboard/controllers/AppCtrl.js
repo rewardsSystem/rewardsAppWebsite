@@ -3,11 +3,10 @@
     'use strict';
 
     ng.module('dashboardApp')
-        .controller('AppCtrl', ['$scope', '$mdToast', function($scope, $mdToast) {
+        .controller('AppCtrl', ['$scope', '$mdToast', 'pagePropertiesService', function($scope, $mdToast, pagePropertiesService) {
             
-            $scope.pageProperties = {
-                pageTitle: "Dashboard"
-            };
+            pagePropertiesService.pageTitle = "Dashboard";
+            $scope.pageProperties = pagePropertiesService;
 
             $scope.cards = [{
                 title: "Some Title",

@@ -3,11 +3,10 @@
     'use strict';
 
     ng.module('dashboardApp')
-        .controller('FamilyViewCtrl', ['$scope', '$mdToast', function($scope, $mdToast) {
+        .controller('FamilyViewCtrl', ['$scope', '$mdToast', 'pagePropertiesService', function($scope, $mdToast, pagePropertiesService) {
             
-            $scope.pageProperties = {
-                pageTitle: "Family"
-            };
+            pagePropertiesService.pageTitle = "Family";
+            $scope.pageProperties = pagePropertiesService;
 
         }]);
 
