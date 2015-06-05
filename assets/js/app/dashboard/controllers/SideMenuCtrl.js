@@ -17,6 +17,7 @@
                         $window.location = "/logout";
                         break;
                     case "family": 
+                        $scope.pageProperties.pageTitle = "Family"
                         $state.go('family');
                         break;
                     case "settings": 

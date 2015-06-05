@@ -30,14 +30,17 @@
             $stateProvider
                 .state('family', {
                   url: "/family",
+                  controller: "FamilyViewCtrl",
                   templateUrl: "partials/family.html"
                 })
                 .state('settings', {
                   url: "/settings",
+                  controller: "SettingsViewCtrl",
                   templateUrl: "partials/settings.html"
                 })
                 .state('about', {
                   url: "/about",
+                  controller: "AboutViewCtrl",
                   templateUrl: "partials/about.html"
                 });
         });

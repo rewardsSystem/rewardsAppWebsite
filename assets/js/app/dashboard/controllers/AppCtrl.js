@@ -5,6 +5,10 @@
     ng.module('dashboardApp')
         .controller('AppCtrl', ['$scope', '$mdToast', function($scope, $mdToast) {
             
+            $scope.pageProperties = {
+                pageTitle: "Dashboard"
+            };
+
             $scope.cards = [{
                 title: "Some Title",
                 content: "Card content"
