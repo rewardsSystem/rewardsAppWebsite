@@ -33,6 +33,12 @@
                   controller: "FamilyViewCtrl",
                   templateUrl: "partials/family.html"
                 })
+                .state('member', {
+                  url: "/family/member",
+                  controller: "MemberViewCtrl",
+                  params: { member: null },
+                  templateUrl: "partials/member.html"
+                })
                 .state('settings', {
                   url: "/settings",
                   controller: "SettingsViewCtrl",
