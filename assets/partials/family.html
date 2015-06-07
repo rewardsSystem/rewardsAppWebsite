@@ -1,14 +1,10 @@
-<md-content layout="row" layout-wrap>
-    <md-card layout-padding flex-gt-md="33" ng-repeat="familyMember in familyMembers" layout="column" ng-click="memberClick(familyMember)">
-        <img ng-src="{{ familyMember.picture }}" alt="{{ familyMember.name }}" />
+<md-content layout="row" layout-sm="column" layout-wrap>
+    <md-card layout-padding ng-repeat="familyMember in familyMembers" layout="column" ng-click="memberClick(familyMember)">
+        <img ng-src="{{ familyMember.picture }}" alt="{{ familyMember.name }}" style="width: 150px; height: 150px;"/>
         <md-card-content>
-            <h3>{{ familyMember.name }}</h3>
+            <h3 layout-align="center">{{ familyMember.name }}</h3>
             <span>Today's progress</span>
             <md-progress-linear class="md-accent" md-mode="query" value="30"></md-progress-linear>
-            <span>Current week's progress</span>
-            <md-progress-linear class="md-accent" md-mode="determinate" value="{{ familyMember.weekProgress }}"></md-progress-linear>
-            <span>This month's progress</span>
-            <md-progress-linear class="md-accent" md-mode="determinate" value="{{ familyMember.monthProgress }}"></md-progress-linear>
         </md-card-content>
     </md-card>
 </md-content>
