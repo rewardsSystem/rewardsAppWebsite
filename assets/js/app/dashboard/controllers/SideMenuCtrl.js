@@ -5,10 +5,10 @@
     ng.module('dashboardApp')
         .controller('SideMenuCtrl', ['$scope', '$mdToast','$window', '$state', function($scope, $mdToast, $window, $state) {
             $scope.menuItems = [
-                { title: "My Family", action: "family" },
-                { title: "Settings", action: "settings" },
-                { title: "About", action: "about" },
-                { title: "Logout", action: "logout" }
+                { title: "My Family", action: "family", icon: "supervisor_account" },
+                { title: "Settings", action: "settings", icon: "settings" },
+                { title: "About", action: "about", icon: "info" },
+                { title: "Logout", action: "logout", icon: "settings_power" }
             ];
 
             $scope.menuClicked = function(menu) {

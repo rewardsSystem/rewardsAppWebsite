@@ -1,10 +1,22 @@
 <md-content layout="row" layout-sm="column" layout-wrap>
-    <md-card layout-padding ng-repeat="familyMember in familyMembers" layout="column" ng-click="memberClick(familyMember)">
-        <img ng-src="{{ familyMember.picture }}" alt="{{ familyMember.name }}" style="width: 150px; height: 150px;"/>
-        <md-card-content>
-            <h3 layout-align="center">{{ familyMember.name }}</h3>
-            <span>Today's progress</span>
-            <md-progress-linear class="md-accent" md-mode="query" value="30"></md-progress-linear>
-        </md-card-content>
+    <md-card layout="column" ng-click="addMember()" class="ra-clickable">
+        <div  class="member-icon-container" layout layout-align="center center" flex>
+            <img ng-src="/images/plus-sign.png" alt="{{ familyMember.name }}" style="width: 150px;"/>
+        </div>
+    </md-card>
+    <md-card class="family-member-card" ng-repeat="familyMember in familyMembers" layout="row">
+        <md-content layout="column" layout-padding>
+            <div  layout="column" class="ra-clickable" ng-click="memberClick(familyMember)">
+                <ra-card-menu family-member='familyMember' menu-items='menuItems'></ra-card-menu>
+                <div  class="member-icon-container" flex>
+                    <img ng-src="{{ familyMember.picture }}" alt="{{ familyMember.name }}" style="width: 150px; height: 150px;"/>
+                </div> 
+                <div>
+                    <h3 layout-align="center">{{ familyMember.name }}</h3>
+                    <span>Today's progress</span>
+                    <md-progress-linear class="md-accent" md-mode="query" value="30"></md-progress-linear>
+                </div>
+            </div>
+        </md-content>
     </md-card>
 </md-content>

@@ -11,7 +11,6 @@
     <!--STYLES END-->
     <link href="libs/angular-material/angular-material.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
 </head>
 <body ng-app="dashboardApp" ng-controller="AppCtrl" ng-cloak>
     <section layout="row" layout-fill>
@@ -24,7 +23,7 @@
             <md-list flex ng-controller="SideMenuCtrl">
                 <md-list-item ng-repeat="menuItem in menuItems" ng-click="menuClicked(menuItem.action)">
                     <p>{{ menuItem.title }}</p>
-                    <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+                    <i class="material-icons">{{ menuItem.icon }}</i>
                 </md-list-item>
             </md-list>
             </md-content>
@@ -61,9 +60,13 @@
     <script src="/js/app/dashboard/controllers/AboutViewCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/AppCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/FamilyViewCtrl.js"></script>
+    <script src="/js/app/dashboard/controllers/MemberMenuCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/MemberViewCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/SettingsViewCtrl.js"></script>
     <script src="/js/app/dashboard/controllers/SideMenuCtrl.js"></script>
+    <script src="/js/app/dashboard/directives/raCardMenu.js"></script>
+    <script src="/js/app/dashboard/services/cardService.js"></script>
+    <script src="/js/app/dashboard/services/familyService.js"></script>
     <script src="/js/app/dashboard/services/pagePropertiesService.js"></script>
     <!--SCRIPTS END-->
 </body>

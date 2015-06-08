@@ -1,0 +1,16 @@
+<div layout="column" layout-align="right">
+    <div layout="row">
+        <div flex></div>
+        <md-button class="md-icon-button" ng-click="openMenu($event)">
+            <i class="material-icons">more_vert</i>
+        </md-button>
+    </div>
+    <md-content ng-show="showMenu">
+        <md-list>
+            <md-list-item ng-repeat="menuItem in menuItems" ng-click="menuItem.action($event, familyMember)">
+                <p>{{ menuItem.title }}</p>
+                <i class="material-icons">{{ menuItem.icon }}</i>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
